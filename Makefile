@@ -9,3 +9,6 @@ serve:
 
 test: 
 	python -m pytest -vv test_app.py 
+
+clean_cache: 
+	rm -rf __pycache__ .pytest_cache 
