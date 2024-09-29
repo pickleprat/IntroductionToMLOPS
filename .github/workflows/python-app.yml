@@ -12,16 +12,19 @@ permissions:
 jobs:
 
   build:
-
     # first operating system 
     runs-on: ubuntu-latest
+
+    strategy: 
+      matrix: 
+        python-version: ["3.9", "3.10"] 
 
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.10
       uses: actions/setup-python@v5
       with:
-        python-version: ["3.9", "3.10"]
+        python-version: ${{ matrix.python-version }} 
     - name: Install dependencies
       run: |
         make install 
