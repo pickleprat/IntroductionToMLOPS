@@ -5,7 +5,7 @@ from data import books
 
 import uvicorn 
 
-app = FastAPI() 
+app = FastAPI(title="MLOPS Endpoint") 
 
 @app.post("/book", response_model=BookResponse) 
 async def get_book(book: BookRequest) -> BookResponse:  
