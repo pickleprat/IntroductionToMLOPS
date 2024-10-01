@@ -7,6 +7,6 @@ class EndpointFlooder(HttpUser):
     def flood_endpoint(self): 
         self.client.post(
                 "/book", 
-                json = (list(books.items())
-                        [random.randint(0, 2)][0]) 
+                json = { "name": (list(books.items())
+                        [random.randint(0, 2)][0]) } 
                 ) 
